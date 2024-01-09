@@ -39,11 +39,12 @@ public class ObjectEqualityTest {
     public void e_sameObject() {
         String first = "Hello";
         String second = new String("Hello");
-        String third = "Hello";
-        Assertions.assertEquals(first, second, () -> "object should be equal");
+        String third = "Hello new";
+        String fourth = "Hello";
+        Assertions.assertEquals(first, second, () -> "content should be equal");
+        Assertions.assertNotEquals(first, third, () -> "content should not be equal");
         Assertions.assertNotSame(first, second, () -> "Should not the same object");
-        // Assertions.assertSame(first,second,()->"Check the object are same or not");
-        Assertions.assertSame(first, third, () -> "Check the object are same or not");
+        Assertions.assertSame(first, fourth, () -> "Check the object are same or not");
     }
 
 
@@ -68,7 +69,7 @@ public class ObjectEqualityTest {
     }
 
     @Test
-    public void i_NotNull(){
+    public void i_NotNull() {
         String check = "check";
         Assertions.assertNotNull(check);
     }
