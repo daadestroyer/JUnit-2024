@@ -3,13 +3,15 @@ package org.example.ArrayEquality;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class ArrayEqualityTest {
 
     @Test
     public void a_ArrayObjectEquals() {
         int[] first = {1, 2, 3};
         int[] sameOne = first;
-        Assertions.assertEquals(first, sameOne, () -> "two array objects are equal");
+        assertEquals(first, sameOne, () -> "two array objects are equal");
     }
 
     @Test
